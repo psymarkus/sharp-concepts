@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: If you use the SHARP Ontology or SHARP Concept Scheme, please cite it using the metadata below.
+title: SHARP Ontology and Concept Scheme
+type: dataset
+version: 0.1.0
+date-released: '2026-08-12'
+authors:
+- family-names: Godker
+  given-names: Markus
+  alias: psymarkus
+repository-code: https://github.com/psymarkus/sharp-concepts
+url: https://w3id.org/sharp/ontology
+keywords:
+- SHARP
+- ontology
+- SKOS
+- concept scheme
+- controlled vocabulary
+- educational research
