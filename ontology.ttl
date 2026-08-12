@@ -1,0 +1,805 @@
+@prefix : <https://w3id.org/sharp/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/sharp/ontology> .
+
+<https://w3id.org/sharp/ontology> rdf:type owl:Ontology ;
+                                   owl:versionIRI <https://w3id.org/sharp/ontology/0.1.0-webprotege> ;
+                                   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                   <http://purl.org/dc/terms/creator> "Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer, SHARP Consortium" ;
+                                   <http://purl.org/dc/terms/description> "Collaborative SKOS vocabulary for SHARP concept labels and definitions (optimized for WebProtégé rendering)."@en ;
+                                   <http://purl.org/dc/terms/title> "SHARP SKOS Concepts"@en ;
+                                   owl:versionInfo "0.1.0-webprotege" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/sharp/note
+<https://w3id.org/sharp/note> rdf:type owl:AnnotationProperty ;
+                              rdfs:label "sharp:note"@en .
+
+
+###  https://w3id.org/sharp/note/lead
+<https://w3id.org/sharp/note/lead> rdf:type owl:AnnotationProperty ;
+                                   rdfs:label "sharp:lead"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "the SHARP researcher that coordinates the discussion around the concept."@en ;
+                                   rdfs:subPropertyOf <https://w3id.org/sharp/note> .
+
+
+###  https://w3id.org/sharp/note/literature
+<https://w3id.org/sharp/note/literature> rdf:type owl:AnnotationProperty ;
+                                         rdfs:label "sharp:literature"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "Link to a Literature that is central for understanding this concepte"@en ;
+                                         rdfs:subPropertyOf <https://w3id.org/sharp/note> .
+
+
+###  https://w3id.org/sharp/note/operationalization
+<https://w3id.org/sharp/note/operationalization> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:label "sharp:operationalization"@en ;
+                                                 rdfs:subPropertyOf <https://w3id.org/sharp/note> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:ObjectProperty ;
+                                              rdfs:label "skos:broader"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://purl.org/dc/terms/title> "SHARP"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/sharp/concept/Collaboration
+<https://w3id.org/sharp/concept/Collaboration> rdf:type owl:NamedIndividual ,
+                                                        <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                               <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                               rdfs:label "Collaboration"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "Collaboration is a [joint / coordinated / synchronous] activity of at least two individuals to achieve a [common goal / desirable outcome] by pooling knowledge and skills. Relevant facets of collaboration are social interdependence, task division, the introduction of new ideas, the sharing of information, resources, and knowledge as well as good communication."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Collaboration"@en ;
+                                               <https://w3id.org/sharp/note/lead> "Anne Cleverley-Kornmayer" .
+
+
+###  https://w3id.org/sharp/concept/ProfessionalSkills
+<https://w3id.org/sharp/concept/ProfessionalSkills> rdf:type owl:NamedIndividual ,
+                                                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                    <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                                    <http://purl.org/dc/terms/identifier> "c0054"^^xsd:string ;
+                                                    rdfs:label "Professional skills"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "Professional skills refer to the ability to apply professional knowledge accurately, efficiently, and appropriately in professional situations. They are reflected in situation-specific performance and become observable through professional activities and resulting outcomes."^^xsd:string ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Professional skills"@en .
+
+
+###  https://w3id.org/sharp/concept/SocialLearningActivities
+<https://w3id.org/sharp/concept/SocialLearningActivities> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                                          <http://purl.org/dc/terms/identifier> "c0055"^^xsd:string ;
+                                                          rdfs:label "Social learning activities"@en ;
+                                                          <http://www.w3.org/2004/02/skos/core#definition> "Social learning activities refer to observable actions such as communication, collaboration, coordination or any other interaction with present others in support of learning. The the presence of others can be actual, implied or imagined."@en ;
+                                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Social learning activities"@en .
+
+
+###  https://w3id.org/sharp/concept/c0001
+<https://w3id.org/sharp/concept/c0001> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0001" ;
+                                       rdfs:label "Activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Activity refers to a specified, observable type of behavior that individuals show during a task and that serves a specified function in solving a task."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Activities"@en .
+
+
+###  https://w3id.org/sharp/concept/c0002
+<https://w3id.org/sharp/concept/c0002> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0002" ;
+                                       rdfs:label "Adaptability"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Adaptability refers to the extent to which learners can actively adjust features of their learning environment to modify their learning experience. Such adjustments may include regulating the amount, type, or timing of instructional support, scaffolding, or feedback according to their preferences or needs."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptability"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "What if there is no \"data\" tracked or data-tracking involved? eg learner choice based on preference is not necessarily always tracked eg in real-life simulations etc"@en ,
+                                                                                       "eg can a textbook be personlized? it is not adaptive but is it adaptable."@en ;
+                                       <https://w3id.org/sharp/note/lead> "Elisabeth Bauer" ;
+                                       <https://w3id.org/sharp/note/literature> "Fischer, G. (2001). User Modeling in Human–Computer Interaction. User Modeling and User-Adapted Interaction, 11(1), 65–86. https://doi.org/10.1023/A:1011145532042" ,
+                                                                                "Lee, J., & Park, O.-C. (2008). Adaptive instructional systems. In J. M. Spector,  M. D. Merrill, J. Van Merrienboer, & M. P. Driscoll (Eds.), Handbook of research on educational communications and technology (pp. 469–484). Lawrence Erlbaum Associates." ,
+                                                                                "Plass, J. L., & Pawar, S. (2020). Toward a taxonomy of adaptivity for learning. Journal of Research on Technology in Education, 52(3), 275–300. https://doi.org/10.1080/15391523.2020.1719943" .
+
+
+###  https://w3id.org/sharp/concept/c0003
+<https://w3id.org/sharp/concept/c0003> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0003" ;
+                                       rdfs:label "Adaptation outcome"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Adaptation outcome refers to an observable consequence of a personalization decision that is used to evaluate the effectiveness of an adaptation. Within the AdProSim model, adaptation outcomes serve as optimization criteria for the logic model."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptation outcome"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Stefan Ufer" .
+
+
+###  https://w3id.org/sharp/concept/c0004
+<https://w3id.org/sharp/concept/c0004> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0004" ;
+                                       rdfs:label "Adaptation target"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "An adaptation target is (one out of) a range of options a learning environment that can be modified through personalization."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptation target"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Stefan Ufer" .
+
+
+###  https://w3id.org/sharp/concept/c0005
+<https://w3id.org/sharp/concept/c0005> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0005" ;
+                                       rdfs:label "Adaptive learning support"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Adaptive learning support refers to instructional support that is adjusted to learners’ individual characteristics, needs, or learning states in order to improve learning processes and learning outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptive learning support"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "what are needs and differences? how is it different from learner variables and characteristics? What are the measures, is it the same or different from instructional practices or the environments (see personalization definition), scaffolding and feedback? Support as feedback and scaffolding."@en ;
+                                       <https://w3id.org/sharp/note/lead> "Elisabeth Bauer" .
+
+
+###  https://w3id.org/sharp/concept/c0006
+<https://w3id.org/sharp/concept/c0006> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0006" ;
+                                       rdfs:label "Adaptivity"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Adaptivity refers to the extent to which systems or instructors adjust features of a learning environment on the basis of assessed learner characteristics, needs, or learning states."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Adaptivity"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "learner variables / characteristics -> increase terminology coherence."@en ;
+                                       <https://w3id.org/sharp/note/lead> "Elisabeth Bauer" .
+
+
+###  https://w3id.org/sharp/concept/c0007
+<https://w3id.org/sharp/concept/c0007> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0007" ;
+                                       rdfs:label "Adjustment base"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "An adjustment base refers to the measured learner variables, that are used to infer a learner state on which personalization decisions are based."^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Adjustment base"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Stefan Ufer" .
+
+
+###  https://w3id.org/sharp/concept/c0008
+<https://w3id.org/sharp/concept/c0008> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0008" ;
+                                       rdfs:label "Applicability of knowledge"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Applicability of knowledge refers to the extent to which professional knowledge can be transferred and used effectively in specific professional situations and problems."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Applicability of knowledge"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Sarah Hofer" ;
+                                       <https://w3id.org/sharp/note/literature> "Bromme, R., & Tillema, H. (1995). Fusing experience and theory: The structure of professional knowledge. Learning and Instruction, 5(4), 261–267. https://doi.org/10.1016/0959-4752(95)00018-6" .
+
+
+###  https://w3id.org/sharp/concept/c0009
+<https://w3id.org/sharp/concept/c0009> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0009" ;
+                                       rdfs:label "Approximation of practice"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Approximation of practice refers to opportunities to engage in practices of authentic professional practice in a learning environment or activity while reducing complexity, risk, or other constraints of real-world practice. Approximations of practice vary in their degree of similarity and proximitiy to professional practice."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "We first need to define representation of practice"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Approximation of practice"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Jenna Koenen" .
+
+
+###  https://w3id.org/sharp/concept/c0010
+<https://w3id.org/sharp/concept/c0010> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0010" ;
+                                       rdfs:label "Case"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A case is a specific instantiation of a task in which the unspecified contextual features, information, actors, and conditions are concretely specified."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> """Open Issues:
+\"Many decisions: typicality
+exemplarity
+complexity
+difficulty
+format
+come with cues that are more or less salient\""""@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Case"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Andreas Obersteiner" .
+
+
+###  https://w3id.org/sharp/concept/c0011
+<https://w3id.org/sharp/concept/c0011> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0022> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0011" ;
+                                       rdfs:label "Cognitive learning prerequisites"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Cognitive learning prerequisites refer to relatively stable general cognitive abilites possessed by learners, which learners bring to a learning situation and that influence learning processes and learning outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Cognitive learning prerequisites"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Matthias Stadler" .
+
+
+###  https://w3id.org/sharp/concept/c0012
+<https://w3id.org/sharp/concept/c0012> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0024> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0012" ;
+                                       rdfs:label "Cognitive learning processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Cognitive learning processes in simulations include learners' processing of sensory information in their working memory, using prior knowledge from long-term memory for encoding  Information, once processed, is integrated through elaborating and organizing activities into long- term memory, forming the basis for future learning and application"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Cognitive learning processes"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." ;
+                                       <https://w3id.org/sharp/note/literature> "Gegenfurtner, A., Gruber, H., Holzberger, D., Keskin, Ö., Lehtinen, E., Seidel, T., Stürmer, K., & Säljö, R. (2023). Towards a cognitive theory of visual expertise. Re-Theorising Learning and Research Methods in Learning Research, 142–158. https://doi.org/10.4324/9781003205838-10" ,
+                                                                                "Stern, E. (2017). Individual differences in the learning potential of human beings. Npj Science of Learning, 2(1), 2. https://doi.org/10.1038/s41539-016-0003-0" ,
+                                                                                "Sweller, J., van Merriënboer, J. J. G., & Paas, F. (2019). Cognitive architecture and instructional design: 20 years later. Educational Psychology Review, 31(2), 261–292. https://doi.org/10.1007/s10648-019-09465-5" .
+
+
+###  https://w3id.org/sharp/concept/c0013
+<https://w3id.org/sharp/concept/c0013> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0013" ;
+                                       rdfs:label "Diagnosing"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Diagnosing refers to the professional practice of making judgments about clients, situations, or problems based on available information, with the goal of reducing diagnostic uncertainty. Diagnosing may occur individually or collaboratively. It describes the broader phenomenon of diagnosis rather than the underlying processes or observable activities involved."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Diagnosing"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Leah Braun" ;
+                                       <https://w3id.org/sharp/note/literature> """Heitzmann, N., Seidel, T., Hetmanek, A., Wecker, C., Fischer, M. R., Ufer, S., Schmidmaier, R., Neuhaus, B., Siebeck, M.,
+Stürmer, K., Obersteiner, A., Reiss, K., Girwidz, R., Fischer, F., & Opitz, A. (2019). Facilitating diagnostic competences in
+simulations in higher education: A framework and a research agenda for medical and teacher education. Frontline Learn-
+ing Research, 7(4). https://doi.org/10.14786/flr.v7i4.384""" .
+
+
+###  https://w3id.org/sharp/concept/c0014
+<https://w3id.org/sharp/concept/c0014> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0014" ;
+                                       rdfs:label "Diagnostic activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Diagnostic activities refer to observable actions that externalize the processes underlying diagnosing, such as generating hypotheses, evaluating evidence, or drawing conclusions (EDAs). Sequences of diagnostic activities may provide evidence about underlying diagnostic processes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Diagnostic activities"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Constanze Richters" ;
+                                       <https://w3id.org/sharp/note/literature> """Fischer, F., Kollar, I., Ufer, S., Sodian, B., Hussmann, H., Pekrun, R., Neuhaus, B., Dorner, B., Pankofer, S., Fischer, M. R.,
+Strijbos, J.-W., & Eberle, J. (2014). Scientific reasoning and argumentation: Advancing an interdisciplinary research agenda in education. Frontline Learning Research, 2(2), 28-45. https://doi.org/10.14786/flr.v2i2.96""" .
+
+
+###  https://w3id.org/sharp/concept/c0015
+<https://w3id.org/sharp/concept/c0015> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0015" ;
+                                       rdfs:label "Facets of knowledge"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Facets of knowledge refer to content-based categories of professional knowledge. Examples from teaching include the facets content knowledge (subject-specific knowledge), pedagogical knowledge (general knowledge about teaching and learning), and pedagogical content knowledge (knowledge about subject-specific teaching strategies)."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Facets of knowledge"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Birgit Neuhaus" ;
+                                       <https://w3id.org/sharp/note/literature> "Shulman, L. (1987). Knowledge and Teaching:Foundations of the new reform. Harvard Educational Review, 57(1), 1–23. https://doi.org/10.17763/haer.57.1.j463w79r56455411" .
+
+
+###  https://w3id.org/sharp/concept/c0016
+<https://w3id.org/sharp/concept/c0016> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0016" ;
+                                       rdfs:label "Feedback"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Feedback is information given to learners during or after their interaction with the simulation. The goal is to inform learners about a discrepancy between their current task performance (e.g. diagnosing or intervention) and the (instructionally) desired performance. Feedback can be human or computer generated. Feedback in simulations can be static (simple or elaborated), simple adaptive feedback (task level), or elaborated adaptive feedback (process level or self-regulation level)."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "- Feedback processing - feedback roles, good feedback,"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Feedback"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Nicole Heitzmann" .
+
+
+###  https://w3id.org/sharp/concept/c0017
+<https://w3id.org/sharp/concept/c0017> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0017" ;
+                                       rdfs:label "Intervening"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Intervening refers to the professional practice of influencing, supporting, or changing conditions, behaviours, or developmental trajectories of clients, with the aim of identifying and optimizing appropriate and effective responses to a given problem. Intervening may occur individually or collaboratively. It describes the broader phenomenon of intervention rather than the underlying processes or observable activities involved."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> """Richters, C., Schmidmaier, R., Popov, V., Schredelseker J., Fischer, F., & Fischer, M. R. (2024). Intervention skills – a neglected
+field of research in medical education and beyond. GMS Journal for Medical Education, 41(4), Article Doc48.
+https://doi.org/10.3205/zma001703"""^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intervening"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Constanze Richters" .
+
+
+###  https://w3id.org/sharp/concept/c0018
+<https://w3id.org/sharp/concept/c0018> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0018" ;
+                                       rdfs:label "Intervention activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Intervention activities refer to observable actions that externalize the processes underlying intervening, such as generating, selecting, implementing, communicating, and evaluating options for action in practice. Sequences of intervention activities may provide evidence about underlying intervention processes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> """Richters, C., Schmidmaier, R., Popov, V., Schredelseker J., Fischer, F., & Fischer, M. R. (2024). Intervention skills – a neglected
+field of research in medical education and beyond. GMS Journal for Medical Education, 41(4), Article Doc48.
+https://doi.org/10.3205/zma001703"""^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intervention activities"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Constanze Richters" .
+
+
+###  https://w3id.org/sharp/concept/c0019
+<https://w3id.org/sharp/concept/c0019> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0019" ;
+                                       rdfs:label "Learner model"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A learner model is a representation of a learner’s current and predicted learning state. It comprises assumptions about learning prerequisites, learning processes, and expected learning outcomes and serves as a basis for personalization decisions within a learning environment."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Learner model"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Matthias Stadler" .
+
+
+###  https://w3id.org/sharp/concept/c0020
+<https://w3id.org/sharp/concept/c0020> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0020" ;
+                                       rdfs:label "Learning activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Learning activities refer to learning goal-directed observable actions undertaken by learners during task engagement that contribute to learning processes and learning outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "looks like different projects understand this connection between activities and processes in a different way"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Learning activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "1. Is it learner driven or system-driven?"@en ,
+                                                                                       "2. What is the relationship between processes and activities? What comes first, what is bigger?"@en ,
+                                                                                       "3. Activities behavioral and observable vs. processes (more happening between the ears)"@en ,
+                                                                                       "off-task activities not included (so something not directed at instructional goal or something happening during simulation, but not triggered with the case/materials"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Olga Chernikova" .
+
+
+###  https://w3id.org/sharp/concept/c0021
+<https://w3id.org/sharp/concept/c0021> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0021" ;
+                                       rdfs:label "Learning outcomes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Learning outcomes refer to relatively enduring changes in learners' knowledge, skills, attitudes, beliefs, or behaviors that result from learning processes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Learning outcomes"@en .
+
+
+###  https://w3id.org/sharp/concept/c0022
+<https://w3id.org/sharp/concept/c0022> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0022" ;
+                                       rdfs:label "Learning prerequisites"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Learning prerequisites refer to learner characteristics that are present before or at the beginning of a learning activity and that influence subsequent learning processes and learning outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Learning prerequisites"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Doris Holzberger" .
+
+
+###  https://w3id.org/sharp/concept/c0023
+<https://w3id.org/sharp/concept/c0023> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0023" ;
+                                       rdfs:label "Learning process scaffolding"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Learning process scaffolding enhances learners' engagement in an effective learning process by offering additional instructional support beyond the core learning task's instruction. Learning process scaffolding encompasses various forms: worked and modeling examples for exemplifying appropriate task processing o prompts and hints for directing attention to specific task elements (e.g., cognitive and metacognitive prompts) ; scripts and roles for defining responsibilities and detailing task steps (e.g., collaboration scripts) ; reflection phases and for task evaluation (e.g., identifying goals and planning next steps)  and self-assessment ; cueing ; Sharing and eliciting evidence and hypotheses"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Learning process scaffolding"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Stefan Küchemann" .
+
+
+###  https://w3id.org/sharp/concept/c0024
+<https://w3id.org/sharp/concept/c0024> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0024" ;
+                                       rdfs:label "Learning processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Learning processes refer to the cognitive, metacognitive, motivational-affective, and social mechanisms that occur during learning and contribute to the development of learning outcomes."^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Learning processes"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." .
+
+
+###  https://w3id.org/sharp/concept/c0025
+<https://w3id.org/sharp/concept/c0025> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0025" ;
+                                       rdfs:label "Macro-level strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Macro-level strategy refers to a personalization strategy where instruction is adapted to learner needs based on a learner model, which consists mainly of prerequisite data and is updated infrequently."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Macro-level strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> """before cases
+infrequent
+measurement vs. (possible) adjustment"""@en ;
+                                       <https://w3id.org/sharp/note/lead> "Michael Sailer" ;
+                                       <https://w3id.org/sharp/note/literature> <https://www.sciencedirect.com/science/article/pii/S1041608025001220> .
+
+
+###  https://w3id.org/sharp/concept/c0026
+<https://w3id.org/sharp/concept/c0026> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0026" ;
+                                       rdfs:label "Meso-level strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Meso-level strategy refers to a personalization strategy where instruction is adapted to learner needs based on a learner model, which is upated after each case."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Meso-level strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> """between cases 
+after segment"""@en ;
+                                       <https://w3id.org/sharp/note/lead> "Michael Sailer" .
+
+
+###  https://w3id.org/sharp/concept/c0027
+<https://w3id.org/sharp/concept/c0027> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0022> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0027" ;
+                                       rdfs:label "Metacognitive learning prerequisites"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Metacognitive learning prerequisites encompass knowledge about one's cognitive processes and the metacognitive skills needed for selfregulation activities, such as goal setting, planning, self-control, monitoring, and reflection  Metacognitive prerequisites refer to the three phases of self-regulated learning - orientation and planning of learning activities based on learning goals, implementation of learning activities and the evaluation of, or reflection on, achieved learning goals"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Metacognitive learning prerequisites"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." ;
+                                       <https://w3id.org/sharp/note/literature> "Azevedo, R. (2009). Theoretical, conceptual, methodological, and instructional issues in research on metacognition and self-regulated learning: A discussion. Metacognition and Learning, 4(1), 87–95. https://doi.org/10.1007/s11409-009-9035-7" ,
+                                                                                """Bannert, M., Pieger, E., & Sonnenberg, C. (2015). MESH – Metacognitive Strategy Inventory for Learning with Hypermedia. TUM
+School of Education, Technische Universität München""" ,
+                                                                                """Bannert, M., Sonnenberg, C., Mengelkamp, C., & Pieger, E. (2015). Short- and long-term effects of students’ self-directed metacognitive prompts on navigation behavior and learning performance. Computers in Human Behavior, 52, 293-306.
+https://doi.org/10.1016/j.chb.2015.05.038""" ,
+                                                                                "Zimmerman, B. J. (1989). A social cognitive view of self-regulated academic learning. Journal of Educational Psychology, 81(3), 329–339. https://doi.org/10.1037/0022-0663.81.3.329" .
+
+
+###  https://w3id.org/sharp/concept/c0028
+<https://w3id.org/sharp/concept/c0028> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0024> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0028" ;
+                                       rdfs:label "Metacognitive learning processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Metacognitive learning processes refer to learners’ awareness of and control over their own learning activities. They include processes such as task analysis, planning, monitoring, and reflection during engagement with a learning situation."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Metacognitive learning processes"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." .
+
+
+###  https://w3id.org/sharp/concept/c0029
+<https://w3id.org/sharp/concept/c0029> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0029" ;
+                                       rdfs:label "Micro-level strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Micro-level strategy refers to a personalization strategy where adaptations are based on changes within smaller learning segments, occurring within individual cases, by continuously analyzing learners' real-time performance and providing immediate hints and prompts based on their task processing."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Micro-level strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> """within cases
+smaller segment"""@en ;
+                                       <https://w3id.org/sharp/note/lead> "Michael Sailer" .
+
+
+###  https://w3id.org/sharp/concept/c0030
+<https://w3id.org/sharp/concept/c0030> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0022> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0030" ;
+                                       rdfs:label "Motivational-affective learning prerequisites"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Motivational-affective prerequisites are relatively enduring, yet context-sensitive expectancy–value beliefs and emotional dispositions that learners hold toward a learning domain, activity, and its outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Motivational-affective learning prerequisites"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Doris Holzberger" .
+
+
+###  https://w3id.org/sharp/concept/c0031
+<https://w3id.org/sharp/concept/c0031> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0024> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0031" ;
+                                       rdfs:label "Motivational-affective learning processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Motivational-affective learning processes are dynamic, situation-specific changes in learners’ expectancy and value beliefs and affective states. These processes unfold over time and are manifested in approach or avoidance behaviors, thereby shaping learners’ engagement with the learning activity and their future engagement with similar tasks."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Motivational-affective learning processes"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Anne Frenzel" .
+
+
+###  https://w3id.org/sharp/concept/c0032
+<https://w3id.org/sharp/concept/c0032> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0032" ;
+                                       rdfs:label "Diagnostic outcome"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#altLabel> "Outcomes of diagnosing"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Diagnostic outcomes refer to the quality of diagnostic judgments, including their accuracy, appropriateness, and the sufficiency of supporting arguments."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Diagnostic outcome"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." ;
+                                       <https://w3id.org/sharp/note/literature> "Bauer, E., Sailer, M., Kiesewetter, J., Fischer, M. R., & Fischer, F. (2022). Diagnostic argumentation in teacher education: Making the case for justification, disconfirmation, and transparency. Frontiers in Education, 7, 977631. https://doi.org/10.3389/feduc.2022.977631" ,
+                                                                                "Norman, G. (2005). Research in clinical reasoning: past history and current trends. Medical Education, 39(4), 418–427. https://doi.org/10.1111/j.1365-2929.2005.02127.x" ,
+                                                                                "Urhahne, D., & Wijnia, L. (2021). A review on the accuracy of teacher judgments. Educational Research Review, 32, 100374. https://doi.org/10.1016/j.edurev.2020.100374" .
+
+
+###  https://w3id.org/sharp/concept/c0033
+<https://w3id.org/sharp/concept/c0033> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0033" ;
+                                       rdfs:label "Intervention outcomes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#altLabel> "Outcomes of intervening"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Intervention outcomes refer to the quality and appropriateness of selected and implemented interventions as well as the sufficiency of supporting arguments used to justify them."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intervention outcomes"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Ralf Schmidmaier" .
+
+
+###  https://w3id.org/sharp/concept/c0034
+<https://w3id.org/sharp/concept/c0034> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0034" ;
+                                       rdfs:label "Personalization"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Personalization refers to the data-informed adjustment of instructional conditions, support, or learning experiences to characteristics, needs, or learning states of an individual learner in order to improve learning processes and outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Personalization"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "Is it always data-based? Personalization based on theory. What is data? Maybe also conceptual. The source to personalize to. eg a teacher can base personalization on their experiences with the students. We personalize based on processes, activities, prerequisites."@en ,
+                                                                                       "Specify the adjustment base / data base. May be more precise for the SHARP context. Disentangle the different terms included like adjustment base, processe, etc."@en ,
+                                                                                       "What is a non-personalized intervention? Eg random adjustments would not be personalized. If it is not focused on specific learners / learner groups."@en ;
+                                       <https://w3id.org/sharp/note/lead> "Tilman Michaeli" ;
+                                       <https://w3id.org/sharp/note/literature> """Tetzlaff, L., Schmiedek, F., & Brod, G. (2021). Developing personalized education: A dynamic framework. Educational Psychology
+Review, 33(3), 863–882. https://doi.org/10.1007/s10648-020-09570-w""" .
+
+
+###  https://w3id.org/sharp/concept/c0035
+<https://w3id.org/sharp/concept/c0035> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0035" ;
+                                       rdfs:label "Personalization strategies"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Personalization strategies refer to systematic approaches for adapting instruction on the basis of information contained in a learner model. They specify when, how, and on the basis of which learner information personalization decisions are made."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Personalization strategies"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." .
+
+
+###  https://w3id.org/sharp/concept/c0036
+<https://w3id.org/sharp/concept/c0036> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0036" ;
+                                       rdfs:label "Diagnostic processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#altLabel> "Processes of diagnosing"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Diagnostic processes refer to latent processes involved in diagnosing. These processes are not directly observable but may be inferred from diagnostic activities and outcomes."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Diagnostic processes"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Leah Braun" .
+
+
+###  https://w3id.org/sharp/concept/c0037
+<https://w3id.org/sharp/concept/c0037> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0037" ;
+                                       rdfs:label "Intervention reasoning"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#altLabel> "Processes of intervening"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Intervention reasoning refers to the cognitive processes involved in generating, evaluating, selecting, and adapting possible courses of action based on diagnostic information, with the aim of identifying and optimizing appropriate and effective responses to a given problem."^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "changed from intervention processes to intervention reasoning"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intervention reasoning"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Constanze Richters" .
+
+
+###  https://w3id.org/sharp/concept/c0038
+<https://w3id.org/sharp/concept/c0038> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0038" ;
+                                       rdfs:label "Professional knowledge and skills"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "DEPRECATED - Split into \"professional knowledge\" and \"professional skills\""@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Professional knowledge and skills"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "Do we clearly distinguish professional skills (application) from professional knowledge (resource)?"^^xsd:string .
+
+
+###  https://w3id.org/sharp/concept/c0039
+<https://w3id.org/sharp/concept/c0039> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0039" ;
+                                       rdfs:label "Regulating activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Regulating activities refer to observable actions through which learners intentionally monitor, control, coordinate, or adapt aspects of learning, performance and collaboration."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Regulating activities"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." .
+
+
+###  https://w3id.org/sharp/concept/c0040
+<https://w3id.org/sharp/concept/c0040> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0040" ;
+                                       rdfs:label "Representational scaffolding"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Representational scaffolding is the systematic selection and modification of practice representations in simulations in order to adjust the level of difficulty to learners with different learning prerequisites and learning goals in order to facilitate the acquisition of knowledge and skills needed to successfully tackle the represented situations of practice. The main representational features adjusted by RS are informational complexity, typicality, agency, and situation dynamics"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Representational scaffolding"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Frank Fischer" .
+
+
+###  https://w3id.org/sharp/concept/c0041
+<https://w3id.org/sharp/concept/c0041> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0041" ;
+                                       rdfs:label "Representations of practice"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Representations of practice are selected depictions, demonstrations, or records of professional work that make particular aspects of professional practice accessible for observation, interpretation, reflection, and learning."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "drawn from Grossman et al., 2009"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Representations of practice"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." ;
+                                       <https://w3id.org/sharp/note/literature> "Grossman P., Compton C., Igra D., Ronfeldt M., Shahan E., Williamson P. (2009). Teaching practice: A cross-professional perspective. Teachers College Record, 111(9), 2055–2100. https://doi.org/10.1177/0161468109111009" .
+
+
+###  https://w3id.org/sharp/concept/c0042
+<https://w3id.org/sharp/concept/c0042> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0042" ;
+                                       rdfs:label "Scaffolding"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Scaffolding refers to learning support by a system or instructor that facilitates learners’ processing and successful completion of learning tasks that would otherwise exceed their current level of competence. The support is intended to enable performance within the learner’s zone of proximal development."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Scaffolding"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Stefan Küchemann" .
+
+
+###  https://w3id.org/sharp/concept/c0043
+<https://w3id.org/sharp/concept/c0043> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0043" ;
+                                       rdfs:label "Simulation"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A simulation is an approximation of practice that represents relevant aspects of a natural, social, or artificial system that allows learners to interact with. In a simulation single features and aspects can be manipulated under controlled conditions."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Simulation"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Bernhard Schmidt-Hertha" .
+
+
+###  https://w3id.org/sharp/concept/c0044
+<https://w3id.org/sharp/concept/c0044> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0044" ;
+                                       rdfs:label "Social interaction"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Social interaction and collaboration introduce an additional layer to task- processing and regulating activities that needs to be considered if simulated professional tasks are social by nature or if the design includes collaborative learning. For analyzing this collaborative dimension, frameworks specific to collaborative problem-solving suggest activities, such as sharing information, negotiating meaning, (co-)regulating collaboration, and initiating and maintaining interaction. These activities can help, for example, to identify a lack of information sharing in simulated professional collaboration."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> "SUGGESTED TO BE DEPRECATED - Reason: Too much overlap with social learning activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Social interaction"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Laura Brandl" .
+
+
+###  https://w3id.org/sharp/concept/c0045
+<https://w3id.org/sharp/concept/c0045> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0022> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0045" ;
+                                       rdfs:label "Social learning prerequisites"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Social learning prerequisites encompass social knowledge and skills for a broad scope of social interactions as well as specialized forms for professional interaction with clients and collaboration with colleagues of the same or a different specialization."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Social learning prerequisites"@en ;
+                                       <https://w3id.org/sharp/note/lead> "N.A." .
+
+
+###  https://w3id.org/sharp/concept/c0046
+<https://w3id.org/sharp/concept/c0046> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/sharp/concept/c0024> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0046" ;
+                                       rdfs:label "Social learning processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Social learning processes refer to mechanisms like vicarious learning and co-construction through which learning is supported  in social contexts. Social learning processes are inferred from social learning activities."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> """1) It feels like there is a degree of circularity in the definition, as social learning processes are described as being inferred from social learning activities, which does not provide an independent conceptual grounding. Social learning processes should instead be defined as a construct in their own right. 
+2)Additionally, it is not clear whether vicarious learning and co-construction are intended to represent dimensions of the construct, or elements of its operationalization."""^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Social learning processes"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#scopeNote> """social learning processes are…
+social learning --> collaboration 
+activities or processes?
+activities can be proxy for processes (oberservation)
+outcomes included in definition?
+emotion-regulation missing
+process is learner-based, activity is more of instruction 
+process: fixed start, end (not same)
+Learning as a change of state
+individual vs. social learning process: trigger is different (actual, implied, imagined presence of others)"""@en ;
+                                       <https://w3id.org/sharp/note> "test"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Laura Brandl" .
+
+
+###  https://w3id.org/sharp/concept/c0047
+<https://w3id.org/sharp/concept/c0047> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0047" ;
+                                       rdfs:label "Strategy"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A strategy refers to latent cognitive, metacognitive, motivational-affective, or social constructs that guides goal-directed and planned sequences of activities during task performance."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Strategy"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Matthias Stadler" .
+
+
+###  https://w3id.org/sharp/concept/c0048
+<https://w3id.org/sharp/concept/c0048> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0048" ;
+                                       rdfs:label "Structure of knowledge"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Structure of knowledge refers to the organization and interconnectedness of knowledge elements within a professional’s knowledge base. Highly structured knowledge is characterized by encapsulation, which are meaningful relationships among concepts, principles, procedures, and situation-specific scripts that support efficient reasoning and action."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Structure of knowledge"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Martin Fischer" ;
+                                       <https://w3id.org/sharp/note/literature> "Boshuizen, H. P., Gruber, H., & Strasser, J. (2020). Knowledge restructuring through case processing: The key to generalise expertise development theory across domains? Educational Research Review, 29, 100310. https://doi.org/10.1016/j.edurev.2020.100310" ,
+                                                                                "Norman, G., Young, M., & Brooks, L. (2007). Non‐analytical models of clinical reasoning: the role of experience. Medical Education, 41(12), 1140–1145. https://doi.org/10.1111/j.1365-2923.2007.02914.x" .
+
+
+###  https://w3id.org/sharp/concept/c0049
+<https://w3id.org/sharp/concept/c0049> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0049" ;
+                                       rdfs:label "Task"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A task describes a type of problem that needs to be mastered in a professional field. A task description includes representational features of task approximations in learning settings. Defining a task includes specifying measurable criteria for successful task performance. A task description may include \"blanks\" to be filled in that allow to span a range of different instantiations (= cases)."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> """Open Issues: 
+\"task is a problem\"? In problem-solving research, a task is not a problem"""@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Task"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Matthias Stadler" ;
+                                       <https://w3id.org/sharp/note/operationalization> "diagnosing"@en ,
+                                                                                        "intervening" .
+
+
+###  https://w3id.org/sharp/concept/c0050
+<https://w3id.org/sharp/concept/c0050> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0050" ;
+                                       rdfs:label "Task processing"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Task processing refers to the sequence of cognitive activities through which learners perceive, interpret, reason about, and act upon task-related information in pursuit of a task goal."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#editorialNote> """Open issues:
+Varying time-scales; Task processing vs learning processes"""^^xsd:string ,
+                                                                                           "TO BE DEPRECATED - Replace with diagnostic and interventional processes and activities"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Task processing"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Andreas Obersteiner" ;
+                                       <https://w3id.org/sharp/note/operationalization> "eye movement" ,
+                                                                                        "log data"@en .
+
+
+###  https://w3id.org/sharp/concept/c0051
+<https://w3id.org/sharp/concept/c0051> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0051" ;
+                                       rdfs:label "Types of knowledge"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Types of knowledge refer to different forms in which professional knowledge is represented and organized. Examples include conceptual, procedural, and strategic knowledge."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Types of knowledge"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Sarah Hofer" ;
+                                       <https://w3id.org/sharp/note/literature> "Förtsch, C., Sommerhoff, D., Fischer, F., Fischer, M. R., Girwidz, R., Obersteiner, A., Reiss, K., Stürmer, K., Siebeck, M., Schmidmaier, R., Seidel, T., Ufer, S., Wecker, C., & Neuhaus, B. J. (2018). Systematizing professional knowledge of medical doctors and teachers: Development of an interdisciplinary framework in the context of diagnostic competences. Education Sciences, 8(4), 207. https://doi.org/10.3390/educsci8040207" .
+
+
+###  https://w3id.org/sharp/concept/c0052
+<https://w3id.org/sharp/concept/c0052> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                       <http://purl.org/dc/terms/identifier> "c0052" ;
+                                       rdfs:label "Salience of cues"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Salience of cues refers to the property of information within a task representation that makes it more likely to attract a perceiver’s selective attention during the processing of a diagnosis and/or intervention problem, as a function of its representational features and the perceiver’s prior knowledge and goals."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Salience of cues"@en ;
+                                       <https://w3id.org/sharp/note/lead> "Markus Gödker" .
+
+
+###  https://w3id.org/sharp/concept/professionalknowledge
+<https://w3id.org/sharp/concept/professionalknowledge> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                       <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/sharp/scheme/SHARP> ;
+                                                       <http://purl.org/dc/terms/identifier> "c0053"@en ;
+                                                       rdfs:label "Professional knowledge"@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#definition> "Professional knowledge refers to the domain-specific knowledge base that professionals draw upon to understand, evaluate, and act in professional situations. Professional knowledge can be characterized according to its facets, types, structure, and applicability to practice."@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Professional knowledge"@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#scopeNote> "Do we agree that professional knowledge is characterized by facets, types, structure? Are these dimensions clearly distinct?"@en .
+
+
+###  https://w3id.org/sharp/scheme/SHARP
+<https://w3id.org/sharp/scheme/SHARP> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                                      <http://purl.org/dc/terms/creator> "Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer, SHARP Consortium" ;
+                                      <http://purl.org/dc/terms/description> "A controlled vocabulary of concepts relevant to adaptive learning, instructional support, learning processes, educational interventions, and related domains within the SHARP project." ;
+                                      <http://purl.org/dc/terms/title> "SHARP Concept Scheme"@en ;
+                                      rdfs:label "SHARP Concept Scheme"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "SHARP Concept Scheme"@en .
+
+
+###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
