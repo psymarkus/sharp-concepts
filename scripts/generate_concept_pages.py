@@ -9,7 +9,7 @@ DCTERMS = Namespace("http://purl.org/dc/terms/")
 # Pfade relativ zum Speicherort dieses Skripts bestimmen
 repository = Path(__file__).resolve().parent.parent
 ttl_file = repository / "ontology.ttl"
-output_directory = repository / "docs" / "concepts"
+output_directory = repository / "docs" / "concept"
 
 if not ttl_file.exists():
     raise FileNotFoundError(
@@ -126,10 +126,16 @@ index_html = """
 
 for identifier, label in concept_list:
     index_html += (
-        f'<li><a href="concepts/{identifier}.html">'
+        f'<li><a href="concept/{identifier}.html">'
         f'{label} ({identifier})'
         f'</a></li>'
     )
+
+index_html += """
+    </ul>
+</body>
+</html>
+"""
 
 (repository / "docs" / "index.html").write_text(
     index_html,
