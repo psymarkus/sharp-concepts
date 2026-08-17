@@ -80,7 +80,7 @@ for concept in concepts:
 
         <h2>IRI</h2>
         <p>
-            ">
+            <a href="{escape(str(concept), quote=True)}">
                 {escape(str(concept))}
             </a>
         </p>
