@@ -4,6 +4,9 @@ The SHARP Concepts Ontology provides a SKOS-based vocabulary of concepts related
 
 ## Resources
 
+Concept Index:
+https://w3id.org/sharp
+
 Ontology:
 https://w3id.org/sharp/ontology
 
