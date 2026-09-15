@@ -19,7 +19,7 @@ https://w3id.org/sharp/scheme/SHARP
 
 ## Creators and Maintainers
 
-Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer, SHARP Consortium
+SHARP Consortium, Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer
 
 ## License
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]

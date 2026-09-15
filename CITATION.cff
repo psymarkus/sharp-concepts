@@ -5,6 +5,8 @@ type: dataset
 version: 0.1.0
 date-released: '2026-08-12'
 authors:
+  - name: "SHARP Consortium"
+  
   - family-names: "Gödker"
     given-names: "Markus"
 
