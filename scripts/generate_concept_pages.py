@@ -11,6 +11,27 @@ repository = Path(__file__).resolve().parent.parent
 ttl_file = repository / "ontology.ttl"
 output_directory = repository / "docs" / "concept"
 
+citation_apa = escape(
+    "SHARP Consortium, Gödker, M., Richters, C., Chernikova, O., "
+    "Stadler, M., Holzberger, D., Fischer, F., & SHARP Consortium. "
+    "(2026). SHARP Concepts Ontology (Version 0.1.0) [Data set]. "
+    "https://github.com/psymarkus/sharp-concepts"
+)
+citation_bibtex = """@misc{SHARP_Consortium_and_Godker_SHARP_Concepts_Ontology_2026,
+author = {{SHARP Consortium} and Gödker, Markus and Richters, Constanze and Chernikova, Olga and Stadler, Matthias and Holzberger, Doris and Fischer, Frank and {SHARP Consortium}},
+month = aug,
+title = {{SHARP Concepts Ontology}},
+url = {https://github.com/psymarkus/sharp-concepts},
+year = {2026}
+}"""
+citation_footer = f"""
+    <footer>
+        <h2>Citation</h2>
+        <p>{citation_apa}</p>
+        <pre>{escape(citation_bibtex)}</pre>
+    </footer>
+"""
+
 if not ttl_file.exists():
     raise FileNotFoundError(
         f"Die Datei wurde nicht gefunden: {ttl_file}"
@@ -97,6 +118,7 @@ for concept in concepts:
         <h2>Definition</h2>
         <p>{escape(definition)}</p>
     </main>
+    {citation_footer}
 </body>
 </html>
 """
@@ -133,6 +155,7 @@ for identifier, label in concept_list:
 
 index_html += """
     </ul>
+""" + citation_footer + """
 </body>
 </html>
 """
