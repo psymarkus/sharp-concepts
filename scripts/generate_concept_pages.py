@@ -13,16 +13,16 @@ output_directory = repository / "docs" / "concept"
 
 citation_apa = escape(
     "SHARP Consortium, Gödker, M., Richters, C., Chernikova, O., "
-    "Stadler, M., Holzberger, D., & Fischer, F."
-    "(2026). SHARP Concepts Ontology (Version 0.1.0) [Data set]. "
-    "https://github.com/psymarkus/sharp-concepts"
+    "Stadler, M., Holzberger, D., & Fischer, F. (2026). "
+    "SHARP Concepts Ontology (Version 0.1.0) [Computer software]. "
+    "https://w3id.org/sharp/ontology"
 )
-citation_bibtex = """@misc{SHARP_Consortium_and_Godker_SHARP_Concepts_Ontology_2026,
+citation_bibtex = """@software{SHARP_Consortium_SHARP_Concepts_Ontology_2026,
 author = {{SHARP Consortium} and Gödker, Markus and Richters, Constanze and Chernikova, Olga and Stadler, Matthias and Holzberger, Doris and Fischer, Frank},
-month = aug,
+date = {2026-08-12},
 title = {{SHARP Concepts Ontology}},
-url = {https://github.com/psymarkus/sharp-concepts},
-year = {2026}
+url = {https://w3id.org/sharp/ontology},
+version = {0.1.0}
 }"""
 citation_footer = f"""
     <footer>
