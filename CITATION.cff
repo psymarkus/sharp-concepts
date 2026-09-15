@@ -1,3 +1,4 @@
+
 cff-version: 1.2.0
 title: SHARP Concepts Ontology
 message: >-
@@ -30,6 +31,3 @@ keywords:
 license: CC-BY-NC-SA-4.0
 version: 0.1.0
 date-released: '2026-08-12'
-  - "concept scheme"
-  - "controlled vocabulary"
-  - "educational research"
