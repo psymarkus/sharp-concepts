@@ -3,7 +3,7 @@ title: SHARP Concepts Ontology
 message: >-
   If you use the SHARP Ontology or and any SHARP Concept
   Definition, please cite it using the metadata below.
-type: dataset
+type: ontology
 authors:
   - name: SHARP Consortium
   - family-names: Gödker
