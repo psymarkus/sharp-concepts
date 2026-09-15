@@ -13,7 +13,7 @@ output_directory = repository / "docs" / "concept"
 
 citation_apa = escape(
     "SHARP Consortium, Gödker, M., Richters, C., Chernikova, O., "
-    "Stadler, M., Holzberger, D., & Fischer, F.. "
+    "Stadler, M., Holzberger, D., & Fischer, F."
     "(2026). SHARP Concepts Ontology (Version 0.1.0) [Data set]. "
     "https://github.com/psymarkus/sharp-concepts"
 )
