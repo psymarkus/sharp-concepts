@@ -1,10 +1,9 @@
-
 cff-version: 1.2.0
 title: SHARP Concepts Ontology
 message: >-
   If you use the SHARP Ontology or and any SHARP Concept
   Definition, please cite it using the metadata below.
-type: 'ontology'
+type: dataset
 authors:
   - name: SHARP Consortium
   - family-names: Gödker
@@ -19,7 +18,7 @@ authors:
     given-names: Doris
   - family-names: Fischer
     given-names: Frank
-repository-code: 'https://github.com/psymarkus/sharp-concepts'
+# repository-code: 'https://github.com/psymarkus/sharp-concepts'
 url: 'https://w3id.org/sharp/ontology'
 keywords:
   - SHARP
