@@ -19,12 +19,18 @@ https://w3id.org/sharp/scheme/SHARP
 
 ## Creators and Maintainers
 
-SHARP Consortium, Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer
+Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer
+
+## Authors
+
+Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, 
+
+, & Frank Fischer
 
 ## License
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-SHARP Concepts Ontology © 2026 by SHARP Consortium et al. is licensed under a
+SHARP Concepts Ontology © 2026 by Markus Gödker et al. is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
