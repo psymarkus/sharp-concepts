@@ -19,13 +19,11 @@ https://w3id.org/sharp/scheme/SHARP
 
 ## Creators and Maintainers
 
-Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, Frank Fischer
+Markus Gödker, Constanze Richters, Olga Chernikova, Doris Holzberger, Matthias Stadler,  Frank Fischer
 
 ## Authors
 
-Markus Gödker, Constanze Richters, Olga Chernikova, Matthias Stadler, Doris Holzberger, 
-
-, & Frank Fischer
+Markus Gödker, Constanze Richters, Olga Chernikova, Doris Holzberger, Matthias Stadler, Elisabeth Bauer, Laura Brandl, Leah Braun, Anne Cleverley-Kornmayer, Martin Fischer, Anne Frenzel, Mario Gollwitzer, Nicole Heitzmann, Sarah Hofer, Jenna Koenen, Stefan Küchemann, Doris Lewalter, Tilman Michaeli, Simon Munk, Birgit Neuhaus, Andreas Obersteiner, Melissa Oezsoy, Michael Sailer, Ralf Schmidmaier, Bernhard Schmidt-Hertha, Paul Schneiderbauer, Dagmar Traub, Stefan Ufer, Eva Weiss, & Frank Fischer
 
 ## License
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
