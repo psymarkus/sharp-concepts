@@ -15,7 +15,7 @@ https://w3id.org/sharp/scheme/SHARP
 
 ## Version
 
-0.1.0
+0.2.0
 
 ## Creators and Maintainers
 

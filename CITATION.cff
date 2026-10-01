@@ -5,7 +5,6 @@ message: >-
   Definition, please cite it using the metadata below.
 type: software
 authors:
-  - name: SHARP Consortium
   - family-names: Gödker
     given-names: Markus
   - family-names: Richters
@@ -16,6 +15,54 @@ authors:
     given-names: Matthias
   - family-names: Holzberger
     given-names: Doris
+  - family-names: Bauer
+    given-names: Elisabeth
+  - family-names: Brandl
+    given-names: Laura
+  - family-names: Braun
+    given-names: Leah
+  - family-names: Cleverley-Kornmayer
+    given-names: Anne
+  - family-names: Fischer
+    given-names: Martin
+  - family-names: Frenzel
+    given-names: Anne
+  - family-names: Gollwitzer
+    given-names: Mario
+  - family-names: Heitzmann
+    given-names: Nicole
+  - family-names: Hofer
+    given-names: Sarah
+  - family-names: Koenen
+    given-names: Jenna
+  - family-names: Küchemann
+    given-names: Stefan
+  - family-names: Lewalter
+    given-names: Doris
+  - family-names: Michaeli
+    given-names: Tilman
+  - family-names: Munk
+    given-names: Simon
+  - family-names: Neuhaus
+    given-names: Birgit
+  - family-names: Obersteiner
+    given-names: Andreas
+  - family-names: Oezsoy
+    given-names: Melissa
+  - family-names: Sailer
+    given-names: Michael
+  - family-names: Schmidmaier
+    given-names: Ralf
+  - family-names: Schmidt-Hertha
+    given-names: Bernhard
+  - family-names: Schneiderbauer
+    given-names: Paul
+  - family-names: Traub
+    given-names: Dagmar
+  - family-names: Ufer
+    given-names: Stefan
+  - family-names: Weiss
+    given-names: Eva
   - family-names: Fischer
     given-names: Frank
 # repository-code: 'https://github.com/psymarkus/sharp-concepts'
@@ -28,5 +75,5 @@ keywords:
   - controlled vocabulary
   - educational research
 license: CC-BY-NC-SA-4.0
-version: 0.1.0
-date-released: '2026-08-12'
+version: 0.2.0
+date-released: '2026-10-01'
