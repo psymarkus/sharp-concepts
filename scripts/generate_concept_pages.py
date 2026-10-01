@@ -20,9 +20,10 @@ citation_apa = escape(
     "SHARP Concepts Ontology (Version 0.2.0) [Computer software]. "
     "https://w3id.org/sharp/ontology"
 )
+
 citation_bibtex = """@software{Goedker_SHARP_Concepts_2026,
 author = {Gödker, Markus and Richters, Constanze and Chernikova, Olga and Holzberger, Doris and Stadler, Matthias and Bauer, Elisabeth and Brandl, Laura and Braun, Leah and Cleverley-Kornmayer, Anne and Fischer, Martin and Frenzel, Anne and Gollwitzer, Mario and Heitzmann, Nicole and Hofer, Sarah and Koenen, Jenna and Küchemann, Stefan and Lewalter, Doris and Michaeli, Tilman and Munk, Simon and Neuhaus, Birgit and Obersteiner, Andreas and Oezsoy, Melissa and Sailer, Michael and Schmidmaier, Ralf and Schmidt-Hertha, Bernhard and Schneiderbauer, Paul and Traub, Dagmar and Ufer, Stefan and Weiss, Eva and Fischer, Frank},
-date = {2026-08-12},
+date = {2026-10-01},
 title = {{SHARP Concepts Ontology}},
 url = {https://w3id.org/sharp/ontology},
 version = {0.2.0}
