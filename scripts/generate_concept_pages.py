@@ -121,6 +121,7 @@ for concept in concepts:
 </head>
 <body>
     <main>
+        <p><a href="../index.html">Back to index</a></p>
         <h1>{escape(label)}</h1>
 
         <h2>IRI</h2>
