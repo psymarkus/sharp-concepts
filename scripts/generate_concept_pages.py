@@ -75,6 +75,137 @@ print(f"SKOS-Konzepte gefunden: {len(concepts)}")
 created_files = 0
 concept_list = []
 
+shared_css = """
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #387D77;
+            --text-color: #000000;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0 ;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            max-width: 800px;  /* Restricts the text block from getting too wide */
+            width: 100%;       /* Ensures it still fits nicely on smaller screens */
+            margin: 0 auto;    /* Centers the 800px column on the screen */
+            padding: 40px 20px;
+            box-sizing: border-box;
+            flex: 1;
+            text-align: left;  /* Explicitly aligns all text to the left */
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+        }
+        .back-button:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        footer {
+            background-color: var(--primary-color); /* Dark teal background */
+            color: white;                             /* White text */
+            padding: 40px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        footer h2 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white divider line */
+            padding-bottom: 10px;
+        }
+
+        footer p {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #aae0de; /* A lighter pastel teal so links stand out against the dark background */
+            text-decoration: underline;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        footer pre {
+            background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent dark box for the BibTeX code */
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-wrapper {
+            background-color: var(--primary-color);
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+"""
+
+
 # Generate one HTML page per concept using the ontology data.
 for concept in concepts:
     identifier_value = graph.value(concept, DCTERMS.identifier)
@@ -118,10 +249,12 @@ for concept in concepts:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {repository_code_meta}
     <title>{escape(label)} | SHARP Concept Scheme</title>
+    {shared_css}
 </head>
 <body>
+
     <main>
-        <p><a href="../index.html">Back to index</a></p>
+        <p><a href="../index.html" class="back-button">Back to index</a></p>
         <h1>{escape(label)}</h1>
 
         <h2>IRI</h2>
@@ -143,7 +276,10 @@ for concept in concepts:
         <h2>Definition</h2>
         <p>{escape(definition)}</p>
     </main>
-    {citation_footer}
+
+    <div class="footer-wrapper">
+    {citation_footer} 
+    </div>
 </body>
 </html>
 """
@@ -165,13 +301,16 @@ index_html = f"""
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {repository_code_meta}
     <title>SHARP Concept Scheme</title>
+    {shared_css}
 </head>
 <body>
-    <h1>SHARP Concept Scheme</h1>
+    <main>
+        <h1>SHARP Concept Scheme</h1>
 
-    <ul>
+        <ul>
 """
 
 for identifier, label in concept_list:
@@ -183,7 +322,10 @@ for identifier, label in concept_list:
 
 index_html += """
     </ul>
-""" + citation_footer + """
+</main>
+    <div class="footer-wrapper">
+    """ + citation_footer + """
+    </div>
 </body>
 </html>
 """
