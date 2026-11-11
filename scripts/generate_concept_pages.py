@@ -3,10 +3,12 @@ from pathlib import Path
 
 from rdflib import Graph, Namespace, RDF
 
+# Define RDF namespaces used later to access SKOS and Dublin Core properties.
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 
-# Pfade relativ zum Speicherort dieses Skripts bestimmen
+# Resolve paths relative to this script so the project can be generated
+# from any working directory and always target the repository root.
 repository = Path(__file__).resolve().parent.parent
 ttl_file = repository / "ontology.ttl"
 output_directory = repository / "docs" / "concept"
@@ -15,7 +17,9 @@ repository_code_meta = (
     '<meta name="repository-code" '
     f'content="{repository_code_url}">'
 )
-# comment
+
+# Build the citation block used in every generated HTML page so the dataset is
+# attributed consistently in the page footer.
 citation_apa = escape(
     "Gödker, M., Richters, C., Chernikova, O., "
     "Holzberger, D., Stadler, M., Bauer, E., Brandl, L., Braun, L., "
@@ -42,17 +46,23 @@ citation_footer = f"""
     </footer>
 """
 
+# Fail early if the ontology source file is missing so the generator does not
+# silently create incomplete output.
 if not ttl_file.exists():
     raise FileNotFoundError(
         f"Die Datei wurde nicht gefunden: {ttl_file}"
     )
 
+# Make sure the target folder exists before writing any concept pages.
 output_directory.mkdir(parents=True, exist_ok=True)
 
+# Parse the Turtle ontology into an RDF graph so the script can query SKOS
+# concepts and their labels, definitions, and alternative labels.
 graph = Graph()
 graph.parse(ttl_file, format="turtle")
 
-# Alle Ressourcen mit rdf:type skos:Concept ermitteln
+# Collect every resource declared as a SKOS concept, sort them for stable output,
+# and print a quick summary for the user.
 concepts = sorted(
     set(graph.subjects(RDF.type, SKOS.Concept)),
     key=str
@@ -61,16 +71,17 @@ concepts = sorted(
 print(f"RDF-Tripel geladen: {len(graph)}")
 print(f"SKOS-Konzepte gefunden: {len(concepts)}")
 
+# Track created files and the concept metadata needed for the index page.
 created_files = 0
 concept_list = []
 
+# Generate one HTML page per concept using the ontology data.
 for concept in concepts:
     identifier_value = graph.value(concept, DCTERMS.identifier)
     label_value = graph.value(concept, SKOS.prefLabel)
     definition_value = graph.value(concept, SKOS.definition)
 
-
-    # Falls dcterms:identifier fehlt, den letzten Teil der IRI verwenden
+    # If no explicit identifier exists, fall back to the last segment of the IRI.
     if identifier_value:
         identifier = str(identifier_value)
     else:
@@ -85,6 +96,7 @@ for concept in concepts:
 
     concept_list.append((identifier, label))
 
+    # Aggregate alt labels into HTML list items for display on the page.
     alternative_labels = sorted(
         {str(value) for value in graph.objects(concept, SKOS.altLabel)}
     )
@@ -98,6 +110,7 @@ for concept in concepts:
     else:
         alt_label_html = "<p>No alternative labels available.</p>"
 
+    # Render the final HTML for this single concept page.
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -108,6 +121,7 @@ for concept in concepts:
 </head>
 <body>
     <main>
+        <p><a href="../index.html">Back to index</a></p>
         <h1>{escape(label)}</h1>
 
         <h2>IRI</h2>
@@ -133,17 +147,19 @@ for concept in concepts:
 </body>
 </html>
 """
-    
-    
+
+    # Save the generated page to the docs/concept folder.
     output_file = output_directory / f"{identifier}.html"
     output_file.write_text(html, encoding="utf-8")
 
-
     print(f"Erstellt: {output_file.relative_to(repository)}")
-    created_files += 1 
+    created_files += 1
 
+# Sort the concept list by label so the index page is alphabetized and easier to
+# navigate.
 concept_list = sorted(concept_list, key=lambda x: x[1])
 
+# Build the landing page that links to every concept page.
 index_html = f"""
 <!doctype html>
 <html lang="en">
@@ -172,12 +188,11 @@ index_html += """
 </html>
 """
 
+# Write the generated index file into the docs directory.
 (repository / "docs" / "index.html").write_text(
     index_html,
     encoding="utf-8"
 )
-  
-   
 
-
+# Inform the user how many concept pages were generated.
 print(f"Fertig. {created_files} HTML-Dateien wurden erstellt.")
